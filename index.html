@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Komputer Panggilan</title>
+  <!-- Bootstrap CSS -->
+  <link rel="icon" type="image/png" href="./image/icon/logo-litema.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./style/owl.carousel.min.css">
+  <link rel="stylesheet" href="./style/owl.theme.default.min.css">
+  <link rel="stylesheet" href="./style/my-style.css">
+  <style>
+    /* Customize CSS for responsiveness */
+  @media (max-width: 768px){
+    .hero {
+    
+      padding: 100px 20px;
+    
+    }
+    .hero-section button {
+      margin: 0px 0px 20px 40px;
+    }
+    .hero-section {
+      height: 100vh; /* Set the height to 100% of the viewport height on small screens */
+    }
+    .hero-title {
+      padding: 135px 20px 10px 40px;
+      font-size: 28px; /* Reduce font size on small screens */
+    }
+    .hero-subtitle {
+      padding: 0px 20px 20px 40px;
+      font-size: 18px; /* Reduce font size on small screens */
+    }
+    .card {
+      gap: 5px;
+    }
+  }
+  @media (max-width: 1199px) {
+  .hero-section  .col-md-6 .hero-image {
+    display: none; /* Hide the column when the screen size is 1199px or smaller */
+  }
+}
+.navbar {
+  background-color: #041B47!important;
+}
+.navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      margin-right: 10px; /* Add some space between the image and the <p> element */
+    }
+.hero-section {
+  position: relative;
+  height: 700px;
+  background-image: url("./image/mobo-2.jpg"); /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Add a pseudo-element for the background image overlay */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Change the color and alpha value as needed */
+}
+.button {
+  position: relative; /* Ensure the button is positioned correctly */
+  z-index: 2; /* Set a higher z-index to place it above the overlay */
+}
+.whatsapp-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  .hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+  }
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .hero-title {
+    position: relative;
+    z-index: 2;
+    margin-top: 70px;
+    font-size: 46px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .hero-subtitle {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+  }
+  .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(168, 168, 168, 0.5);
+}
+.card {
+    height: 100%; /* Memberi tinggi 100% agar semua card memiliki tinggi yang sama */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc; /* Menambahkan border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan shadow */
+    transition: box-shadow 0.3s ease; /* Animasi untuk shadow */
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efek shadow saat hover */
+  }
+
+  .card-img-top {
+    max-width: 70px; /* Mengatur lebar maksimum gambar */
+    max-height: 70px; /* Mengatur tinggi maksimum gambar */
+    margin-bottom: 15px; /* Margin di bagian bawah gambar untuk memberi jarak dengan teks */
+  }
+  
+    /* Ganti lebar maksimum gambar pada carousel menjadi 120px */
+   .owl-carousel {
+    position: relative;
+    height:auto ;
+    background-image: url("./image/mobo-2.jpg"); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+   }
+   .owl-carousel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Change the color and alpha value as needed */
+   }
+    .owl-carousel .item img {
+    max-width: 200px;
+    height: auto;
+  }
+
+  /* Ganti margin antara gambar-gambar dalam carousel */
+  .owl-carousel .item {
+    padding: 80px 0px; /* Sesuaikan nilai margin sesuai kebutuhan */
+  }
+  .footer {
+    padding: 20px;
+    background-color: #F8F9FA;
+  }
+  .navbar.transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .navbar.transparent .navbar-brand,
+  .navbar.transparent .navbar-nav .nav-link {
+    color: #fff; /* You can change the text color */
+  }
+  .navbar.transparent .navbar-nav .nav-link:hover {
+    color: #f0f0f0; /* You can change the hover text color */
+  }
+  .navbar.transparent .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='3' y1='12' x2='27' y2='12' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='3' y1='6' x2='27' y2='6' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='3' y1='18' x2='27' y2='18' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E");
+  }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
+      <div class="container">
+        <a class="navbar-brand " href="#">
+          <img src="./image/logo-litema.png" alt="" width="70" height="70" class="d-inline-block align-top">
+          <h2>LITEMA</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+          <ul class="navbar-nav m-2">
+            <li class="nav-item m-2">
+              <a class="nav-link" href="#about">Tentang Kami</a>
+            </li>
+            <li class="nav-item m-2 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Layanan
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#service1">Service Komputer</a>
+                <a class="dropdown-item" href="#service2">Installasi Jaringan</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item" href="#service3">CCTV</a>
+              </div>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link" href="#contact">Kontak</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="button btn btn-warning btn-block p-2 m-2">082111574780</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Floating -->
+    <div class="whatsapp-floating">
+      <a href="https://api.whatsapp.com/send?phone=082111574780" target="_blank" class="btn btn-success">
+        <i class="fab fa-whatsapp px-2"></i>Hubungi Kami
+      </a>
+    </div>
+    <!-- Hero Section -->
+    <div id="hero" class="hero-section ">
+      <div class="container py-md-5">
+        <div class="row py-md-5">
+          <div class="col-md-6 py-md-5">
+            <h1 class="hero-title">Lintas Teknologi Maju</h1>
+            <p class="hero-subtitle">Solusi untuk layanan dan perbaikan Komputer dan Laptop anda, Menerima Panggilan Area JABODETABEK</p>
+            <div class="row mt-md-2">
+              <div class="col-md-12 mt-2">
+                <button type="button" class="button btn btn-warning btn-block p-2 mb-2">082111574780</button>
+              </div>
+            </div>
+            <div class="row mt-md-2">
+              <div class="col-md-12">
+                <button type="button" class="button btn btn-warning btn-block p-2 mb-2 ">BIAYA SERVICE</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hero-image"></div>
+            <!-- <img class="hero-image" src="./image/pc.jpg" alt="Hero Image"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- About Section -->
+  <section id="about" class="py-5 m-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 py-">
+          <h2>Tentang Kami</h2>
+          <h1 class="py-3">LINTAS TEKNOLOGI MAJU</h1>
+        </div>
+        <div class="col-md-6">
+        <p><strong> Service Komputer Panggilan JABODETABEK</strong>, Jaringan, Install Ulang Komputer, Virus, Windows Crash, Ngelag, Hang, Upgrade,<strong> DLL. Area JABODETABEK Telp 082111574780</strong></p> 
+        <button type="button" class="btn btn-warning btn-block p-2">Read More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section id="services" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center pb-5">Layanan Kami</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="./image/icon/service.png" class="card-img-top m-3" alt="" width="70" height="70">
+            <div class="card-body">
+              <h4 class="card-title">Komputer</h4>
+              <p class="card-text">Layanan kami mencakup perbaikan hardware, perangkat lunak, instalasi sistem operasi, dan perawatan rutin untuk menjaga performa optimal perangkat Anda. berikut beberapa layanan kami, komputer, install aplikasi, rakit komputer, backup data, cloning windows, Optimalisasi, Perbaikan Printer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="./image/icon/router.png" class="card-img-top m-3" alt="" width="70" height="70">
+            <div class="card-body">
+              <h4 class="card-title">Installasi Jaringan</h4>
+              <p class="card-text">Kami menyediakan layanan profesional dalam pemasangan kabel jaringan untuk memastikan infrastruktur jaringan berfungsi optimal, komunikasi antar perangkat berjalan lancar, dan koneksi jaringan tetap stabil dan handal. Dengan layanan kami, Anda akan memiliki jaringan yang siap untuk mendukung kebutuhan bisnis atau kegiatan lainnya.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="./image/icon/cctv.png" class="card-img-top m-3" alt="" width="70" height="70">
+            <div class="card-body">
+              <h4 class="card-title">CCTV</h4>
+              <p class="card-text">Kami adalah ahli dalam instalasi CCTV untuk melindungi dan mengamankan lingkungan Anda. Dengan teknologi kamera terkini dan tim profesional kami, kami menawarkan solusi keamanan terpercaya untuk bisnis, rumah, dan area publik.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- slide -->
+  <div class="owl-carousel">
+    <div class="item"><img src="./image/slide/slide-1.jpeg" alt="Gambar 1"></div>
+    <div class="item"><img src="./image/slide/slide-2.jpeg" alt="Gambar 2"></div>
+    <div class="item"><img src="./image/slide/slide-3.jpeg" alt="Gambar 3"></div>
+    <div class="item"><img src="./image/slide/slide-4.jpeg" alt="Gambar 4"></div>
+    <div class="item"><img src="./image/slide/slide-5.jpeg" alt="Gambar 5"></div>
+    <div class="item"><img src="./image/slide/slide-6.jpeg" alt="Gambar 6"></div>
+    <div class="item"><img src="./image/slide/slide-7.jpeg" alt="Gambar 7"></div>
+    <div class="item"><img src="./image/slide/slide-8.jpeg" alt="Gambar 8"></div>
+    <div class="item"><img src="./image/slide/slide-9.jpeg" alt="Gambar 9"></div>
+  </div>
+  <!--  -->
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Hubungi Kami</h2>
+      <div class="row">
+        <div class="col-md-6 offset-md-3 mt-4">
+          <form>
+            <div class="form-group m-2">
+              <input type="text" class="form-control" placeholder="Nama">
+            </div>
+            <div class="form-group m-2">
+              <input type="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group m-2">
+              <textarea class="form-control" rows="5" placeholder="Pesan"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block m-3">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 py-2">
+        <a href="#"><img class="m-2" src="./image/icon/linkedin.png" height="25px" width="25px" ></a>
+        <a href="#"><img class="m-2" src="./image/icon/instagram.png" height="25px" width="25px" ></a>
+        <a href="#"><img class="m-2" src="./image/icon/whatsapp.png" height="25px" width="25px" ></a>
+      </div>
+      <div class="col-md-9 ">
+        <h3>Contact Info</h3>
+        <b>Phone</b>
+        <p>082111574780</p>
+        <b>Email</b>
+        <p>Litema@litema.co.id</p>
+      </div>
+    </div>
+  </div>
+</section>
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2023 Service Komputer Panggilan</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/your_font_awesome_kit.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/owl.carousel.min.js"></script>
+<!-- Script custom -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var whatsappButton = document.querySelector('.whatsapp-floating');
+    var scrollY = 0;
+    
+    window.onscroll = function() {
+      var currentScrollY = window.scrollY;
+      if (scrollY > currentScrollY) {
+        whatsappButton.style.transform = 'translateY(0)';
+      } else {
+        whatsappButton.style.transform = 'translateY(100px)';
+      }
+      scrollY = currentScrollY;
+    };
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      items: 1, // Menampilkan satu gambar per geseran
+      loop: true, // Mengaktifkan loop carousel
+      autoplay: true, // Autoplay carousel
+      autoplaySpeed: 1000, // Kecepatan autoplay (dalam milidetik)
+      autoplayTimeout: 3000, // Timeout antara geseran (dalam milidetik)
+      nav: true, // Tombol navigasi prev/next
+      dots: false, // Tampilkan titik indikator
+      slideTransition: 'ease-in-out', // Efek animasi saat digeser (bisa diubah sesuai kebutuhan)
+      responsive: {
+        0: {
+          items: 1 // Jumlah gambar yang tampil pada lebar 0px atau lebih kecil
+        },
+        768: {
+          items: 2 // Jumlah gambar yang tampil pada lebar 768px atau lebih besar
+        }
+      }
+    });
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      autoplayTimeout: 3000,
+      nav: true,
+      dots: false,
+      slideTransition: 'ease-in-out',
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+/* Style untuk hero */
+.hero {
+    position: relative;
+    background-size: cover; /* Menyesuaikan ukuran gambar dengan elemen */
+    background-position: center; /* Menyusun gambar di tengah-tengah elemen */
+  }
+  
+  /* Gambar responsif */
+  .hero img {
+    width: 100%; /* Mengisi lebar elemen */
+    height: auto; /* Menyesuaikan tinggi gambar secara proporsional */
+  }
+  
+  /* Atur tinggi hero agar sesuai dengan tinggi gambar */
+  .hero {
+    height: 300px; /* Ganti dengan tinggi yang sesuai */
+  }
+  
+  /* Atur ukuran hero untuk tampilan perangkat seluler */
+  @media (max-width: 768px) {
+    .hero {
+      height: 200px; /* Ganti dengan tinggi yang sesuai untuk tampilan seluler */
+    }
+  }
