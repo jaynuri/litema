@@ -165,6 +165,27 @@
   .owl-carousel .item {
     padding: 80px 0px; /* Sesuaikan nilai margin sesuai kebutuhan */
   }
+  .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .whatsapp-icon {
+      margin-right: 5px;
+    }
+    #list {
+      margin-top: 30px;
+    }
+    .list {
+      padding-top: 100px;
+    }
+    #whatsapp {
+      margin-top: 20px;
+    }
   .footer {
     padding: 20px;
     background-color: #F8F9FA;
@@ -188,7 +209,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
       <div class="container">
-        <a class="navbar-brand " href="#">
+        <a class="navbar-brand " href="./index.html">
           <img src="./image/logo-litema.png" alt="" width="70" height="70" class="d-inline-block align-top">
           <h2>LITEMA</h2></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -198,7 +219,7 @@
         <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
           <ul class="navbar-nav m-2">
             <li class="nav-item m-2">
-              <a class="nav-link" href="#about">Tentang Kami</a>
+              <a class="nav-link" href="./index.html">Tentang Kami</a>
             </li>
             <li class="nav-item m-2 dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -206,14 +227,14 @@
                 Layanan
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#service1">Service Komputer</a>
+                <a class="dropdown-item" href="./index.html">Service Komputer</a>
                 <a class="dropdown-item" href="#service2">Installasi Jaringan</a>
                 <!-- <div class="dropdown-divider"></div> -->
                 <a class="dropdown-item" href="#service3">CCTV</a>
               </div>
             </li>
             <li class="nav-item m-2">
-              <a class="nav-link" href="#contact">Kontak</a>
+              <a class="nav-link" href="./index.html">Kontak</a>
             </li>
             <li class="nav-item">
               <button type="button" class="button btn btn-warning btn-block p-2 m-2">082111574780</button>
@@ -228,99 +249,62 @@
         <i class="fab fa-whatsapp px-2"></i>Hubungi Kami
       </a>
     </div>
-    <!-- Hero Section -->
-    <div id="hero" class="hero-section ">
-      <div class="container py-md-5">
-        <div class="row py-md-5">
-          <div class="col-md-6 py-md-5">
-            <h1 class="hero-title">Lintas Teknologi Maju</h1>
-            <p class="hero-subtitle">Solusi untuk layanan dan perbaikan Komputer dan Laptop anda, Menerima Panggilan Area JABODETABEK</p>
-            <div class="row mt-md-2">
-              <div class="col-md-12 mt-2">
-                <button type="button" class="button btn btn-warning btn-block p-2 mb-2">082111574780</button>
-              </div>
-            </div>
-            <div class="row mt-md-2">
-              <div class="col-md-12">
-                <button type="button" class="button btn btn-primary btn-block p-2 mb-2  ">BIAYA SERVICE</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="hero-image"></div>
-            <!-- <img class="hero-image" src="./image/pc.jpg" alt="Hero Image"> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  <!-- About Section -->
-  <section id="about" class="py-5 m-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 py-">
-          <h2>Tentang Kami</h2>
-          <h1 class="py-3">LINTAS TEKNOLOGI MAJU</h1>
-        </div>
-        <div class="col-md-6">
-        <p><strong> Service Komputer Panggilan JABODETABEK</strong>, Jaringan, Install Ulang Komputer, Virus, Windows Crash, Ngelag, Hang, Upgrade,<strong> DLL. Area JABODETABEK Telp 082111574780</strong></p> 
-        <button type="button" class="btn btn-warning btn-block p-2">Read More</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Services Section -->
-  <section id="services" class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center pb-5">Layanan Kami</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card text-center">
-            <img src="./image/icon/service.png" class="card-img-top m-3" alt="" width="70" height="70">
-            <div class="card-body">
-              <h4 class="card-title">Komputer</h4>
-              <p class="card-text">Layanan kami mencakup perbaikan hardware, perangkat lunak, instalasi sistem operasi, dan perawatan rutin untuk menjaga performa optimal perangkat Anda. berikut beberapa layanan kami, komputer, install aplikasi, rakit komputer, backup data, cloning windows, Optimalisasi, Perbaikan Printer.</p>
-              <a href="./list.html" class="btn btn-warning">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-center">
-            <img src="./image/icon/router.png" class="card-img-top m-3" alt="" width="70" height="70">
-            <div class="card-body">
-              <h4 class="card-title">Installasi Jaringan</h4>
-              <p class="card-text">Kami menyediakan layanan profesional dalam pemasangan kabel jaringan untuk memastikan infrastruktur jaringan berfungsi optimal, komunikasi antar perangkat berjalan lancar, dan koneksi jaringan tetap stabil dan handal. Dengan layanan kami, Anda akan memiliki jaringan yang siap untuk mendukung kebutuhan bisnis atau kegiatan lainnya.</p>
-              <a href="#" class="btn btn-warning">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-center">
-            <img src="./image/icon/cctv.png" class="card-img-top m-3" alt="" width="70" height="70">
-            <div class="card-body">
-              <h4 class="card-title">CCTV</h4>
-              <p class="card-text">Kami adalah ahli dalam instalasi CCTV untuk melindungi dan mengamankan lingkungan Anda. Dengan teknologi kamera terkini dan tim profesional kami, kami menawarkan solusi keamanan terpercaya untuk bisnis, rumah, dan area publik.</p>
-              <a href="#" class="btn btn-warning">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- slide -->
-  <div class="owl-carousel">
-    <div class="item"><img src="./image/slide/slide-1.jpeg" alt="Gambar 1"></div>
-    <div class="item"><img src="./image/slide/slide-2.jpeg" alt="Gambar 2"></div>
-    <div class="item"><img src="./image/slide/slide-3.jpeg" alt="Gambar 3"></div>
-    <div class="item"><img src="./image/slide/slide-4.jpeg" alt="Gambar 4"></div>
-    <div class="item"><img src="./image/slide/slide-5.jpeg" alt="Gambar 5"></div>
-    <div class="item"><img src="./image/slide/slide-6.jpeg" alt="Gambar 6"></div>
-    <div class="item"><img src="./image/slide/slide-7.jpeg" alt="Gambar 7"></div>
-    <div class="item"><img src="./image/slide/slide-8.jpeg" alt="Gambar 8"></div>
-    <div class="item"><img src="./image/slide/slide-9.jpeg" alt="Gambar 9"></div>
+    <!-- -->
+  <!--  -->
+  <!-- list -->
+  <div id="list" class="list container mt-5">
+    <h2>Harga Layanan Service Komputer</h2>
+    <table class="table table-bordered mt-md-5">
+      <thead>
+        <tr>
+          <th>Layanan</th>
+          <th>Harga</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>Instalasi Sistem Operasi <span>( 7,8,10,11 )</span></p></td>
+          <td>Rp 250.000</td>
+        </tr>
+        <tr>
+          <td>Cek & maintenance ( per komputer )</td>
+          <td>Rp 150.000</td>
+        </tr>
+        <tr>
+          <td>Pembersihan Virus dan Malware</td>
+          <td>Rp 150.000</td>
+        </tr>
+        <tr>
+          <td>Perbaikan Hardware</td>
+          <td>Rp 300.000</td>
+        </tr>
+        <tr>
+          <td>Instalasi Program Aplikasi </td>
+          <td>Rp 100.000</td>
+        </tr>
+        <tr>
+          <td>Perakitan Komputer</td>
+          <td>Rp 250.000</td>
+        </tr>
+        <tr>
+          <td>Pemulihan Data & Cloning Os</td>
+          <td>Rp 300.000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--  -->
+  <!-- btn -->
+  <div id="whatsapp" class="container ">
+    <h2>Hubungi kami melalui WhatsApp</h2>
+    <a href="https://api.whatsapp.com/send?phone=082111574780" target="_blank" class="whatsapp-btn">
+      <i class="fab fa-whatsapp whatsapp-icon"></i>Hubungi via WhatsApp
+    </a>
   </div>
   <!--  -->
   <!-- Price List -->
-    <section id="pricelist" class="py-5">
+  <section id="pricelist" class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">Daftar Harga</h2>
       <div class="row d-flex justify-content-center">
