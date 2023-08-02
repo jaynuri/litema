@@ -215,8 +215,8 @@
             <li class="nav-item m-2">
               <a class="nav-link" href="#contact">Kontak</a>
             </li>
-            <li class="nav-item">
-              <button type="button" class="button btn btn-warning btn-block p-2 m-2">082111574780</button>
+            <li class="nav-item m-2">
+              <a href="https://api.whatsapp.com/send?phone=082111574780" class="btn btn-warning btn-block">082111574780</a>
             </li>
           </ul>
         </div>
@@ -237,12 +237,12 @@
             <p class="hero-subtitle">Solusi untuk layanan dan perbaikan Komputer dan Laptop anda, Menerima Panggilan Area JABODETABEK</p>
             <div class="row mt-md-2">
               <div class="col-md-12 mt-2">
-                <button type="button" class="button btn btn-warning btn-block p-2 mb-2">082111574780</button>
+                <button type="button" onclick="goToExternalLink('https://api.whatsapp.com/send?phone=082111574780')" class="button btn btn-warning btn-block p-2 mb-2">082111574780</button>
               </div>
             </div>
             <div class="row mt-md-2">
               <div class="col-md-12">
-                <button type="button" class="button btn btn-primary btn-block p-2 mb-2  ">BIAYA SERVICE</button>
+                <button type="button" onclick="goToExternalLink('./list.html')" class="button btn btn-primary btn-block p-2 mb-2  ">BIAYA SERVICE</button>
               </div>
             </div>
           </div>
@@ -489,6 +489,11 @@
       }
     });
   });
+</script>
+<script>
+  function goToExternalLink(url) {
+    window.location.href = url;
+  }
 </script>
 </body>
 </html>
