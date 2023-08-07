@@ -8,6 +8,12 @@
   <link rel="icon" type="image/png" href="./image/icon/logo-litema.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style/owl.carousel.min.css">
   <link rel="stylesheet" href="./style/owl.theme.default.min.css">
   <link rel="stylesheet" href="./style/my-style.css">
@@ -44,6 +50,16 @@
   .hero-section  .col-md-6 .hero-image {
     display: none; /* Hide the column when the screen size is 1199px or smaller */
   }
+}
+a {
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+p {
+  font-family: 'Poppins', sans-serif;
+}
+.btn {
+  font-family: 'Ubuntu', sans-serif;
 }
 .navbar {
   background-color: #041B47!important;
@@ -142,11 +158,40 @@
     margin-bottom: 15px; /* Margin di bagian bawah gambar untuk memberi jarak dengan teks */
   }
   
-    /* Ganti lebar maksimum gambar pada carousel menjadi 120px */
+  .whatsapp-floating {
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      z-index: 99;
+      margin-bottom: 20px; /* Jarak vertikal antara tombol WhatsApp dan tombol menuju header */
+      
+    }
+    .primary-link {
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .secondary-link {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Gaya untuk tombol menuju header */
+    .go-head {
+      padding-top: 10px;
+      margin-top: 10px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 50px;
+      width: 50px;
+      background-image: url("./image/icon/Arrow-2.png");
+      z-index: 99;
+    }
+    .btn-circle {
+      border: 1px solid #85878b;
+      border-radius: 30%; /* Atur border radius menjadi 50% untuk membuatnya berbentuk lingkaran */
+    }
    .owl-carousel {
     position: relative;
     height:auto ;
-    background-image: url("./image/mobo-2.jpg"); /* Replace with your background image URL */
+    background-image: url("./image/mobo-2.png"); /* Replace with your background image URL */
     background-size: cover;
     background-position: center;
    }
@@ -157,16 +202,29 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Change the color and alpha value as needed */
+    background-color: rgba(0, 0, 0, 0.7); 
    }
     .owl-carousel .item img {
     max-width: 200px;
     height: auto;
   }
-
-  /* Ganti margin antara gambar-gambar dalam carousel */
+  .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
   .owl-carousel .item {
-    padding: 80px 0px; /* Sesuaikan nilai margin sesuai kebutuhan */
+    padding: 80px 0px;
   }
   .footer {
     padding: 20px;
@@ -189,49 +247,32 @@
   </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
-      <div class="container">
-        <a class="navbar-brand " href="#">
-          <img src="./image/logo-litema.png" alt="" width="70" height="70" class="d-inline-block align-top">
-          <h2>LITEMA</h2></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
-          <ul class="navbar-nav m-2">
-            <li class="nav-item m-2">
-              <a class="nav-link" href="#about">Tentang Kami</a>
-            </li>
-            <li class="nav-item m-2 dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Layanan
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#service1">Service Komputer</a>
-                <a class="dropdown-item" href="#service2">Installasi Jaringan</a>
-                <!-- <div class="dropdown-divider"></div> -->
-                <a class="dropdown-item" href="#service3">CCTV</a>
-              </div>
-            </li>
-            <li class="nav-item m-2">
-              <a class="nav-link" href="#contact">Kontak</a>
-            </li>
-            <li class="nav-item m-2">
-              <a href="https://api.whatsapp.com/send?phone=6282117853710" class="btn btn-warning btn-block">082111574780</a>
-            </li>
-          </ul>
-        </div>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <div class="container">
+      <a class="navbar-brand text-light primary-link" href="./index.html">
+        <img src="./image/logo-litema.png" alt="Logo" width="50" height="50"><h3 class="pt-2">LITEMA</h3></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+        </ul>
       </div>
-    </nav>
-    <!-- Floating -->
-    <div class="whatsapp-floating">
-      <a href="https://api.whatsapp.com/send?phone=6282117853710" target="_blank" class="btn btn-success">
-        <i class="fab fa-whatsapp px-2"></i>Hubungi Kami
-      </a>
     </div>
-    <!-- Hero Section -->
+  </nav>
+  <!-- Floating -->
+  <!-- Tombol WhatsApp -->
+  <div class="whatsapp-floating">
+    <a href="https://api.whatsapp.com/send?phone=6282117853710" target="_blank" class="btn btn-success">
+      <i class="fab fa-whatsapp px-2"></i>Hubungi Kami
+    </a>
+  </div>
+  <!-- Tombol Menuju Header -->
+  <div class="go-head">
+    <a href="#nav" class="btn btn-light floating-button btn-circle"><img src="./image/icon/Arrow-2.png" alt="" height="10" width="10"></a>
+  </div>
+  <!-- Hero Section -->
     <div id="hero" class="hero-section ">
       <div class="container py-md-5">
         <div class="row py-md-5">
@@ -240,12 +281,12 @@
             <p class="hero-subtitle">Solusi untuk layanan dan perbaikan Komputer dan Laptop anda, Menerima Panggilan Area JABODETABEK</p>
             <div class="row mt-md-2">
               <div class="col-md-12 mt-2">
-                <button type="button" onclick="goToExternalLink('https://api.whatsapp.com/send?phone=082117853710')" class="button btn btn-warning btn-block p-2 mb-2">082111574780</button>
+                <button type="button" onclick="goToExternalLink('https://api.whatsapp.com/send?phone=6282117853710')" class="button btn btn-warning btn-block p-2 mb-2 primary-link">082111574780</button>
               </div>
             </div>
             <div class="row mt-md-2">
               <div class="col-md-12">
-                <button type="button" onclick="goToExternalLink('./list.html')" class="button btn btn-primary btn-block p-2 mb-2  ">BIAYA SERVICE</button>
+                <button type="button" onclick="goToExternalLink('#pricelist')" class="button btn btn-primary btn-block p-2 mb-2 primary-link">BIAYA SERVICE</button>
               </div>
             </div>
           </div>
@@ -265,8 +306,12 @@
           <h1 class="py-3">LINTAS TEKNOLOGI MAJU</h1>
         </div>
         <div class="col-md-6">
-        <p><strong> Service Komputer Panggilan JABODETABEK</strong>, Jaringan, Install Ulang Komputer, Virus, Windows Crash, Ngelag, Hang, Upgrade,<strong> DLL. Area JABODETABEK Telp 082111574780</strong></p> 
-        <button type="button" class="btn btn-warning btn-block p-2">Read More</button>
+          <p><strong>Service Komputer Panggilan JABODETABEK</strong>, Jaringan, Install Ulang Komputer, Virus, Windows Crash, Ngelag, Hang, Upgrade,<strong> DLL. Area JABODETABEK Telp 082111574780</strong></p>
+          <button type="button" class="btn btn-warning btn-block p-2 primary-link" onclick="toggleContent(this)">Read More</button>
+          <div class="additional-content" style="display: none;">
+            <h3>Tentang Litema</h3>
+            <p class="secondary-link"><a href="https://litema.co.id">PT. LINTAS TEKNOLOGI MAJU</a> adalah perusahaan penyedia jasa di bidang Teknologi Informasi. Kami menyediakan solusi menyeluruh untuk tahap konsultasi, perancangan, penerapan, dan pemeliharaan bagi bisnis dalam skala kecil, menengah, dan besar. Tim kami selalu update dengan perkembangan Teknologi Informatika untuk membantu kelancaran penggunaan teknologi terbaru. Kami bertanggung jawab memberikan pelayanan terbaik dan profesional untuk meminimalisir resiko atau kerusakan pada pengembangan Teknologi Informatika dan memuaskan pelanggan kami.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -274,7 +319,7 @@
   <!-- Services Section -->
   <section id="services" class="bg-light py-5">
     <div class="container">
-      <h2 class="text-center pb-5">Layanan Kami</h2>
+      <h2 class="text-center pb-5 primary-link">Layanan Kami</h2>
       <div class="row">
         <div class="col-md-4">
           <div class="card text-center">
@@ -282,7 +327,7 @@
             <div class="card-body">
               <h4 class="card-title">Komputer</h4>
               <p class="card-text">Layanan kami mencakup perbaikan hardware, perangkat lunak, instalasi sistem operasi, dan perawatan rutin untuk menjaga performa optimal perangkat Anda. berikut beberapa layanan kami, komputer, install aplikasi, rakit komputer, backup data, cloning windows, Optimalisasi, Perbaikan Printer.</p>
-              <a href="./list.html" class="btn btn-warning">Baca Selengkapnya</a>
+              <a href="#pricelist" class="btn btn-warning">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -292,7 +337,7 @@
             <div class="card-body">
               <h4 class="card-title">Installasi Jaringan</h4>
               <p class="card-text">Kami menyediakan layanan profesional dalam pemasangan kabel jaringan untuk memastikan infrastruktur jaringan berfungsi optimal, komunikasi antar perangkat berjalan lancar, dan koneksi jaringan tetap stabil dan handal. Dengan layanan kami, Anda akan memiliki jaringan yang siap untuk mendukung kebutuhan bisnis atau kegiatan lainnya.</p>
-              <a href="#" class="btn btn-warning">Baca Selengkapnya</a>
+              <a href="https://api.whatsapp.com/send?phone=6282117853710" class="btn btn-warning">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -302,7 +347,7 @@
             <div class="card-body">
               <h4 class="card-title">CCTV</h4>
               <p class="card-text">Kami adalah ahli dalam instalasi CCTV untuk melindungi dan mengamankan lingkungan Anda. Dengan teknologi kamera terkini dan tim profesional kami, kami menawarkan solusi keamanan terpercaya untuk bisnis, rumah, dan area publik.</p>
-              <a href="#" class="btn btn-warning">Baca Selengkapnya</a>
+              <a href="https://api.whatsapp.com/send?phone=6282117853710" class="btn btn-warning">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -325,7 +370,7 @@
   <!-- Price List -->
     <section id="pricelist" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Daftar Harga</h2>
+      <h2 class="text-center mb-4 primary-link">Daftar Harga</h2>
       <div class="row d-flex justify-content-center">
         <div class="col-md-4 d-flex flex-column">
           <div class="card mb-4">
@@ -340,7 +385,7 @@
               <p class="card-text">Replace Thermal paste, cleaning deep pc (per komputer)</p>
             </div>
             <div class="card-footer">
-              <a href="./list.html" class="btn btn-primary btn-block">Baca Selengkapnya</a>
+              <a href="#list-harga" class="btn btn-primary btn-block">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -357,7 +402,7 @@
               <p class="card-text">Cloning OS / pemulihan data</p>
             </div>
             <div class="card-footer">
-              <a href="./list.html" class="btn btn-primary btn-block">Baca Selengkapnya</a>
+              <a href="#list-harga" class="btn btn-primary btn-block">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -373,7 +418,7 @@
               <p class="card-text">Migrasi HDD to SSD</p>
             </div>
             <div class="card-footer">
-              <a href="./list.html" class="btn btn-primary btn-block">Baca Selengkapnya</a>
+              <a href="#list-harga" class="btn btn-primary btn-block">Baca Selengkapnya</a>
             </div>
           </div>
         </div>
@@ -381,21 +426,73 @@
     </div>
   </section>
   <!--  -->
+  <div id="list-harga" class="list container mt-5">
+    <h2 class="primary-link">Harga Layanan Service Komputer</h2>
+    <table class="table table-bordered mt-md-5">
+      <thead>
+        <tr>
+          <th>Layanan</th>
+          <th>Harga</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>Instalasi Sistem Operasi <span>( 7,8,10,11 )</span></p></td>
+          <td>Rp 250.000</td>
+        </tr>
+        <tr>
+          <td>Cek & maintenance ( per komputer )</td>
+          <td>Rp 150.000</td>
+        </tr>
+        <tr>
+          <td>Pembersihan Virus dan Malware</td>
+          <td>Rp 150.000</td>
+        </tr>
+        <tr>
+          <td>Perbaikan Hardware</td>
+          <td>Rp 300.000</td>
+        </tr>
+        <tr>
+          <td>Instalasi Program Aplikasi </td>
+          <td>Rp 100.000</td>
+        </tr>
+        <tr>
+          <td>Perakitan Komputer</td>
+          <td>Rp 250.000</td>
+        </tr>
+        <tr>
+          <td>Pemulihan Data & Cloning Os</td>
+          <td>Rp 300.000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--  -->
+  <!-- btn -->
+  <div id="whatsapp" class="container ">
+    <h2 class="primary-link" >Hubungi kami melalui WhatsApp</h2>
+    <a href="https://api.whatsapp.com/send?phone=6282117853710" target="_blank" class="whatsapp-btn">
+      <i class="fab fa-whatsapp whatsapp-icon m-2"></i>Hubungi via WhatsApp
+    </a>
+  </div>
+  <!--  -->
+  <!--  -->
   <!-- Contact Section -->
   <section id="contact" class="py-5">
     <div class="container">
       <h2 class="text-center">Hubungi Kami</h2>
       <div class="row">
         <div class="col-md-6 offset-md-3 mt-4">
-          <form>
+          <form onsubmit="return sendEmail()">
             <div class="form-group m-2">
-              <input type="text" class="form-control" placeholder="Nama">
+              <input type="text" class="form-control" placeholder="Nama" id="name" autocomplete="off" required>
             </div>
             <div class="form-group m-2">
-              <input type="email" class="form-control" placeholder="Email">
+              <input type="email" class="form-control" placeholder="Email" id="email" autocomplete="off" required>
             </div>
             <div class="form-group m-2">
-              <textarea class="form-control" rows="5" placeholder="Pesan"></textarea>
+              <textarea class="form-control" rows="5" placeholder="Pesan" id="message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block m-3">Kirim Pesan</button>
           </form>
@@ -433,7 +530,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./js/owl.carousel.min.js"></script>
 <!-- Script custom -->
-<script>
+<!-- <script>
   document.addEventListener('DOMContentLoaded', function() {
     var whatsappButton = document.querySelector('.whatsapp-floating');
     var scrollY = 0;
@@ -448,6 +545,57 @@
       scrollY = currentScrollY;
     };
   });
+</script> -->
+<!-- emailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    function sendEmail() {
+      emailjs.init("MZmo_jzB74fzqQRu0");
+
+      var templateParams = {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      };
+
+      emailjs.send("service_zludu6d", "template_mkkdmrp", templateParams)
+        .then(function(response) {
+          alert("Email berhasil dikirim!");
+          console.log("Email terkirim:", response);
+        }, function(error) {
+          alert("Terjadi masalah saat mengirim email.");
+          console.log("Error:", error);
+        });
+
+      return false;
+    }
+  </script>
+<!--  -->
+<script>
+  function sendEmail() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    // Di sini Anda dapat mengganti kode ini dengan implementasi pengiriman email menggunakan backend server (misalnya PHP).
+    // Untuk simulasi, kita akan menampilkan alert pesan.
+    alert("Pesan telah berhasil dikirim!\n\nNama: " + name + "\nEmail: " + email + "\nPesan: " + message);
+
+    // Mengembalikan false untuk mencegah form dikirim secara default karena kita hanya ingin menampilkan alert.
+    return false;
+  }
+</script>
+<script>
+  function toggleContent(button) {
+    var contentDiv = button.nextElementSibling;
+    if (contentDiv.style.display === 'none') {
+      contentDiv.style.display = 'block';
+      button.textContent = 'Read Less';
+    } else {
+      contentDiv.style.display = 'none';
+      button.textContent = 'Read More';
+    }
+  }
 </script>
 <script>
   $(document).ready(function(){
@@ -465,7 +613,7 @@
           items: 1 // Jumlah gambar yang tampil pada lebar 0px atau lebih kecil
         },
         768: {
-          items: 2 // Jumlah gambar yang tampil pada lebar 768px atau lebih besar
+          items: 3 // Jumlah gambar yang tampil pada lebar 768px atau lebih besar
         }
       }
     });
