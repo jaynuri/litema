@@ -281,7 +281,7 @@ p {
             <p class="hero-subtitle">Solusi untuk layanan dan perbaikan Komputer dan Laptop anda, Menerima Panggilan Area JABODETABEK</p>
             <div class="row mt-md-2">
               <div class="col-md-12 mt-2">
-                <button type="button" onclick="goToExternalLink('https://api.whatsapp.com/send?phone=6282117853710')" class="button btn btn-warning btn-block p-2 mb-2 primary-link">082111574780</button>
+                <button type="button" onclick="goToExternalLink('https://api.whatsapp.com/send?phone=6282117853710')" class="button btn btn-warning btn-block p-2 mb-2 primary-link">082117853710</button>
               </div>
             </div>
             <div class="row mt-md-2">
@@ -437,7 +437,7 @@ p {
       </thead>
       <tbody>
         <tr>
-          <td><p>Instalasi Sistem Operasi <span>( 7,8,10,11 )</span></p></td>
+          <td>Instalasi Sistem Operasi ( 7,8,10,11 )</td>
           <td>Rp 250.000</td>
         </tr>
         <tr>
@@ -484,17 +484,20 @@ p {
       <h2 class="text-center">Hubungi Kami</h2>
       <div class="row">
         <div class="col-md-6 offset-md-3 mt-4">
-          <form onsubmit="return sendEmail()">
+          <form >
             <div class="form-group m-2">
-              <input type="text" class="form-control" placeholder="Nama" id="name" autocomplete="off" required>
+              <input type="text" class="form-control" placeholder="Nama" id="sendername" autocomplete="off" required>
             </div>
             <div class="form-group m-2">
-              <input type="email" class="form-control" placeholder="Email" id="email" autocomplete="off" required>
+              <input type="text" class="form-control" placeholder="subject" id="subject" autocomplete="off" required>
             </div>
             <div class="form-group m-2">
-              <textarea class="form-control" rows="5" placeholder="Pesan" id="message" required></textarea>
+              <input type="email" class="form-control" placeholder="Email" id="replyto" autocomplete="off" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block m-3">Kirim Pesan</button>
+            <div class="form-group m-2">
+              <textarea class="form-control" rows="5" placeholder="message" id="message" required></textarea>
+            </div>
+            <button onclick = "sendMail();" class="btn btn-primary btn-block m-3">Kirim Pesan</button>
           </form>
         </div>
       </div>
@@ -549,16 +552,18 @@ p {
 <!-- emailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    function sendEmail() {
+    function sendMail() {
       emailjs.init("MZmo_jzB74fzqQRu0");
 
       var templateParams = {
-        from_name: document.getElementById("name").value,
-        from_email: document.getElementById("email").value,
-        message: document.getElementById("message").value
+        sendername: document.getElementById("sendername").value,
+        subject: document.getElementById("subject").value,
+        replyto: document.getElementById("replyto").value,
+        message: document.getElementById("message").value,
       };
-
-      emailjs.send("service_zludu6d", "template_mkkdmrp", templateParams)
+      var serviceID = "service_zludu6d";
+      var templateID = "template_3kovxef";
+      emailjs.send("service_zludu6d", "template_3kovxef", templateParams)
         .then(function(response) {
           alert("Email berhasil dikirim!");
           console.log("Email terkirim:", response);
